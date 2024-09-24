@@ -9,21 +9,97 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
   <title>Donate For Bangladesh</title>
+  <style>
+     .sticky {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+  </style>
+ 
 </head>
 <body class="lexend">
-  <header class="bg-white bg-opacity-70 backdrop-blur-lg shadow sticky">
+  <header class="bg-white bg-opacity-50 backdrop-blur-md shadow sticky ">
 
     <div class="container mx-auto flex justify-between items-center p-5">
       <button class="bg-[#B4F461] text-black font-bold px-5 py-3 rounded-lg ">Blog</button>
 
+      <div class="flex gap-3 items-center">
+        <img src="./assets/logo.png" alt="logo">
+        <h1 class="text-2xl font-bold ">Donate Bangladesh</h1>
+      </div>
+      <div class="flex items-center">
+      <img src="./assets/coin.png" alt="">
+        <span id="totalAmount" class="font-bold text-lg">5500 BDT</span>
     </div>
 
+    </div>
 
+    <div class="flex justify-center space-x-4 mt-11 p-3">
+      <button id="donationButton" class="bg-[#B4F461] text-black px-6 py-2 rounded-md" onclick="showDonation()">Donation</button>
+      <button id="historyButton" class="bg-white border border-gray-300 text-gray-700 px-6 py-2 rounded-md" onclick="showHistory()">History</button>
+  </div>
   </header>
 
-  <main>
+  <main class="container mx-auto mt-8 px-4">
+    <div id="donationCards" class="space-y-8">
+        <!-- Donation Card -->
+         <!-- Card-1 -->
+        <div class="bg-white shadow-md border border-gray-300 rounded-md p-6 flex">
+            <img src="./assets/noakhali.png" alt="Flood at noakhali" class="w-1/2 rounded-md">
+            <div class="ml-6 flex-1">
+              <div class="flex items-center justify-items-center bg-gray-300 w-1/4 p-1 rounded-md">
+                <img src="./assets/coin.png" alt="">
+                <span id="noakhaliAmount" class="ml-2 text-gray-700 font-bold">0 BDT</span>
+            </div>
+                <h2 class="text-xl font-bold mb-2">Donate for Flood at Noakhali, Bangladesh</h2>
+                <p class="text-gray-600 mb-4">Your donation will help provide essential supplies to those affected by the recent floods.</p>
+                
+                <input id="noakhaliInput" class="w-full border border-gray-300 rounded-md p-2 mb-4" placeholder="Write Donation Amount" type="text"/>
+                <button class="bg-[#B4F461] font-bold px-6 py-2 rounded-md w-full" onclick="donate('noakhali')">Donate Now</button>
+            </div>
+        </div>
 
-  </main>
+        <!-- Card- 2 -->
+        <div class="bg-white shadow-md rounded-md border border-gray-300 p-6 flex">
+          <img src="./assets/feni.png" alt="Flood Relief in Feni" class="w-1/2 rounded-md">
+          <div class="ml-6 flex-1">
+            <div class="flex items-center justify-items-center bg-gray-300 w-1/4 p-1 rounded-md">
+              <img src="./assets/coin.png" alt="">
+              <span id="noakhaliAmount" class="ml-2 text-gray-700 font-bold">0 BDT</span>
+          </div>
+              <h2 class="text-xl font-bold mb-2">Donate for Flood Relief in Feni, Bangladesh</h2>
+              <p class="text-gray-600 mb-4">Your generous donation will help provide immediate aid to those affected by the floods.</p>
+              
+              <input id="feniInput" class="w-full border border-gray-300 rounded-md p-2 mb-4" placeholder="Write Donation Amount" type="text"/>
+              <button class="bg-[#B4F461] font-bold px-6 py-2 rounded-md w-full" onclick="donate('feni')">Donate Now</button>
+          </div>
+      </div>
+      <!-- Card-3 -->
+      <div class="bg-white shadow-md rounded-md border border-gray-300 p-6 flex">
+        <img src="./assets/quota-protest.png" alt="Aid for Injured in Quota Movement" class="w-1/2 rounded-md">
+        <div class="ml-6 flex-1">
+          <div class="flex items-center justify-items-center bg-gray-300 w-1/4 p-1 rounded-md">
+            <img src="./assets/coin.png" alt="">
+            <span id="noakhaliAmount" class="ml-2 text-gray-700 font-bold">0 BDT</span>
+        </div>
+            <h2 class="text-xl font-bold mb-2">Aid for Injured in the Quota Movement</h2>
+            <p class="text-gray-600 mb-4">Your support is crucial in providing medical assistance to those injured in the recent protests.</p>
+           
+            <input id="quotaInput" class="w-full border border-gray-300 rounded-md p-2 mb-4" placeholder="Write Donation Amount" type="text"/>
+            <button class="bg-[#B4F461] font-bold px-6 py-2 rounded-md w-full" onclick="donate('quota')">Donate Now</button>
+        </div>
+    </div>
+
+    <div id="historySection" class="hidden mt-8">
+        <h2 class="text-2xl font-bold mb-4">Donation History</h2>
+        <div id="historyCards" class="space-y-4">
+            <!-- History Cards will be generated here -->
+        </div>
+    </div>
+</main>
+
   
 </body>
 </html>
