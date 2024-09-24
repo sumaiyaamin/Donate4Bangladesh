@@ -5,15 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate For Bangladesh</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
     <style>
-       
         .sticky {
             position: sticky;
             top: 0;
             z-index: 10;
         }
-       
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 50; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0, 0, 0, 0.5); 
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            max-width: 500px; /* Max width for larger screens */
+            border-radius: 8px; /* Rounded corners */
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -92,16 +109,17 @@
     </div>
 </main>
 
-<!-- Modal -->
-<!-- Modal for Success Notification -->
-<div id="successModal" class="modal">
-  <div class="modal-content">
-      <span class="close" onclick="closeModal()" style="cursor:pointer;">&times;</span>
-      <h2 class="text-center font-bold">Congrats!</h2>
+<!-- Modal  -->
+
+<div id="successModal" class="modal fixed inset-0 flex items-center justify-center z-50">
+  <div class="modal-content bg-white rounded-lg shadow-lg p-6">
+      <h1 class="text-center text-4xl font-bold">Congrats!</h1>
       <img src="./assets/coin.png" alt="Coin" class="mx-auto my-4" style="width: 50px; height: 50px;">
       <p class="text-center">You Have Donated for Humankind.</p>
       <p class="text-center font-bold">Successfully</p>
-      <button class="bg-[#B4F461] text-black px-4 py-2 rounded-md mt-4" onclick="closeModal()">Close Confirmation</button>
+      <div class="flex justify-center mt-5">
+          <button class="bg-gray-300 w-1/2 text-center font-bold px-4 py-2 rounded-md" onclick="closeModal()">Close Confirmation</button>
+      </div>
   </div>
 </div>
 

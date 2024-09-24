@@ -19,8 +19,6 @@ function showHistory() {
     updateButtonStyles('history');
 }
 
-
-
 function donate(campaign) {
     let inputField, currentAmountElement;
 
@@ -45,15 +43,12 @@ function donate(campaign) {
         return;
     }
 
-   
     totalAmount -= donationAmount;
     document.getElementById('totalAmount').innerText = totalAmount + ' BDT';
 
-   
     currentAmounts[campaign] += donationAmount;
     currentAmountElement.innerText = currentAmounts[campaign] + ' BDT';
 
-    
     const donationDate = new Date();
     donationHistory.push({
         amount: donationAmount,
@@ -61,21 +56,20 @@ function donate(campaign) {
         date: donationDate
     });
 
-    
     inputField.value = '';
 
-    
-    showModal(donationAmount, campaign);
+    // after a successful donation
+    showModal();
 }
-function showModal(donationAmount, campaign) {
-  const message = `
-     <Congrats!<br>
-      <img src="./assets/coin.png" alt="Coin" class="mx-auto my-4" style="width: 50px; height: 50px;"><br>
-      You Have Donated for Humankind.<br>
-      Successfully
-  `;
-  document.getElementById('modalMessage').innerHTML = message;
-  document.getElementById('successModal').style.display = 'block';
+
+function showModal() {
+  const modal = document.getElementById('successModal');
+  modal.classList.remove('hidden'); 
+}
+
+function closeModal() {
+  const modal = document.getElementById('successModal');
+  modal.classList.add('hidden'); 
 }
 
 function updateHistoryCards() {
@@ -121,22 +115,6 @@ function updateButtonStyles(active) {
         historyButton.classList.add('bg-[#B4F461]', 'text-black');
         historyButton.classList.remove('bg-white', 'text-gray-700');
     }
-}
-
-// Modal 
-function showModal(donationAmount, campaign) {
-  const message = `
-     <Congrats!<br>
-      <img src="./assets/coin.png" alt="Coin" class="mx-auto my-4" style="width: 50px; height: 50px;"><br>
-      You Have Donated for Humankind.<br>
-      Successfully
-  `;
-  document.getElementById('modalMessage').innerHTML = message;
-  document.getElementById('successModal').style.display = 'block';
-}
-
-function closeModal() {
-    document.getElementById('successModal').style.display = 'none';
 }
 
 
