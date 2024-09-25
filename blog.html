@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Donate For Bangladesh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+     <!-- Lexend Font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        .accordion-item {
+            transition: max-height 0.3s ease;
+        }
+        .question-bubble {
+            position: relative;
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-left: 10px;
+        }
+        .question-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: 100%; 
+            left: 50%;
+            margin-left: -5px; 
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent white transparent; 
+        }
+        .question-icon {
+            font-size: 24px; 
+            color: black; 
+        }
+    </style>
+</head>
+<body class="bg-gray-100 lexend">
+
+<header class="bg-white bg-opacity-50 backdrop-blur-md shadow sticky">
+    <div class="container mx-auto flex justify-between items-center p-5">
+        <button class="bg-[#B4F461] text-black font-bold px-5 py-3 rounded-lg" onclick="location.href='index.html'">Home</button>
+        <div class="flex gap-3 items-center">
+          <img src="./assets/logo.png" alt="logo" class="h-10">
+          <h1 class="text-2xl font-bold">Donate Bangladesh</h1>
+      </div>
+      <div class="flex items-center">
+          <img src="./assets/coin.png" alt="" class="h-6">
+          <span id="totalAmount" class="font-bold text-lg">5500 BDT</span>
+      </div>
+  </div>
+    
+</header>
+
+<main class="container mx-auto mt-8 px-4">
+    <h2 class="text-3xl font-bold mb-4">
+        Important FAQ 
+        <span class="question-bubble">
+            <span class="question-icon">?</span>
+        </span>
+    </h2>
+
+    <div class="accordion">
+        <div class="accordion-item border-b">
+            <button class="accordion-header w-full text-left py-4 px-6 font-semibold focus:outline-none flex justify-between items-center" onclick="toggleAccordion(this)">
+                What is the Document Object Model (DOM)?
+                <span class="transform transition-transform duration-300" id="arrow1">➕</span>
+            </button>
+            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                <div class="p-6">
+                    I manipulate the Document Object Model (DOM) to interact with the structure of web documents. It allows me to dynamically change the content, structure, and style of a webpage through JavaScript.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item border-b">
+            <button class="accordion-header w-full text-left py-4 px-6 font-semibold focus:outline-none flex justify-between items-center" onclick="toggleAccordion(this)">
+                How do you select an element from the DOM?
+                <span class="transform transition-transform duration-300" id="arrow2">➕</span>
+            </button>
+            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                <div class="p-6">
+                    I select an element from the DOM using methods like `document.getElementById()`, `document.querySelector()`, or `document.getElementsByClassName()`. These methods help me access and manipulate specific elements in the document.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item border-b">
+            <button class="accordion-header w-full text-left py-4 px-6 font-semibold focus:outline-none flex justify-between items-center" onclick="toggleAccordion(this)">
+                What is event delegation in the context of the DOM, and why is it useful?
+                <span class="transform transition-transform duration-300" id="arrow3">➕</span>
+            </button>
+            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                <div class="p-6">
+                    I use event delegation to add a single event listener to a parent element instead of individual listeners for each child element. This technique improves performance and simplifies event management for dynamically added elements.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item border-b">
+            <button class="accordion-header w-full text-left py-4 px-6 font-semibold focus:outline-none flex justify-between items-center" onclick="toggleAccordion(this)">
+                How do you manipulate an element's attributes and styles using the DOM?
+                <span class="transform transition-transform duration-300" id="arrow4">➕</span>
+            </button>
+            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                <div class="p-6">
+                    I manipulate an element's attributes using methods like `setAttribute()` and `getAttribute()`. To change styles, I access the `style` property of the element and set CSS properties directly, for example, `element.style.color = 'red';`.
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="./js/blog.js"></script>
+  
+
+
+</body>
+</html>

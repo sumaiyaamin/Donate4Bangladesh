@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate For Bangladesh</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lexend Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <style>
         .sticky {
             position: sticky;
@@ -27,13 +31,13 @@
             margin: auto;
             padding: 20px;
             border: 1px solid #888;
-            width: 80%; /* Could be more or less, depending on screen size */
-            max-width: 500px; /* Max width for larger screens */
-            border-radius: 8px; /* Rounded corners */
+            width: 80%; 
+            max-width: 500px;
+            border-radius: 8px; 
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 lexend">
 
 <header class="bg-white bg-opacity-50 backdrop-blur-md shadow sticky">
     <div class="container mx-auto flex justify-between items-center p-5">
@@ -109,9 +113,9 @@
     </div>
 </main>
 
-<!-- Modal  -->
 
-<div id="successModal" class="modal fixed inset-0 flex items-center justify-center z-50">
+<!-- Modal  -->
+<div id="successModal" class="modal fixed inset-0 flex items-center justify-center z-50" style="display: none;"> 
   <div class="modal-content bg-white rounded-lg shadow-lg p-6">
       <h1 class="text-center text-4xl font-bold">Congrats!</h1>
       <img src="./assets/coin.png" alt="Coin" class="mx-auto my-4" style="width: 50px; height: 50px;">

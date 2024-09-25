@@ -6,6 +6,8 @@ let currentAmounts = {
     quota: 2400
 };
 
+let showModalAfterDonation = false; 
+
 function displayDonation() {
     document.getElementById('donationCards').style.display = 'block';
     document.getElementById('historySection').style.display = 'none';
@@ -58,18 +60,29 @@ function donate(campaign) {
 
     inputField.value = '';
 
-    // after a successful donation
-    showModal();
+    
+    showModalAfterDonation = true;
+    showModal(); 
 }
 
 function showModal() {
   const modal = document.getElementById('successModal');
-  modal.classList.remove('hidden'); 
+  modal.style.display = 'flex'; 
 }
 
 function closeModal() {
   const modal = document.getElementById('successModal');
-  modal.classList.add('hidden'); 
+  modal.style.display = 'none'; 
+}
+
+
+window.onload = function() {
+  if (showModalAfterDonation) {
+      showModal();
+      showModalAfterDonation = false; 
+  } else {
+      closeModal(); 
+  }
 }
 
 function updateHistoryCards() {
