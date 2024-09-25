@@ -44,7 +44,7 @@
         <button class="bg-[#B4F461] text-black font-bold px-5 py-3 rounded-lg" onclick="location.href='blog.html'">Blog</button>
         <div class="flex gap-3 items-center">
             <img src="./assets/logo.png" alt="logo" class="h-10">
-            <h1 class="text-2xl font-bold">Donate Bangladesh</h1>
+            <h1 class="text-2xl font-bold hidden md:block lg:block">Donate Bangladesh</h1> 
         </div>
         <div class="flex items-center">
             <img src="./assets/coin.png" alt="" class="h-6">
@@ -58,47 +58,56 @@
 </header>
 
 <main class="container mx-auto mt-8 px-4">
-    <div id="donationCards" class="space-y-8">
-        <!--  Card -1 -->
-        <div class="bg-white shadow-md border border-gray-300 rounded-md p-6 flex">
-            <img src="./assets/noakhali.png" alt="Flood at Noakhali" class="w-1/2 rounded-md">
-            <div class="ml-6 flex-1">
-                <div class="flex items-center justify-items-center bg-gray-300 w-1/4 p-1 rounded-md">
+    <div id="donationCards" class="space-y-8 flex flex-col md:flex-row md:flex-wrap">
+        <!-- Card -1 -->
+        <div class="bg-white shadow-md border border-gray-300 rounded-md p-6 flex flex-col md:flex-row">
+            <img src="./assets/noakhali.png" alt="Flood at Noakhali" class="w-full md:w-1/2 rounded-md">
+            <div class="ml-0 md:ml-6 flex-1">
+                <div class="flex items-center justify-items-center text-center bg-gray-300 w-1/2 lg:w-1/4 p-1 mt-5 rounded-md">
                     <img src="./assets/coin.png" alt="">
                     <span id="noakhaliAmount" class="ml-2 text-gray-700 font-bold">0 BDT</span>
                 </div>
-                <h2 class="text-xl font-bold mb-2">Donate for Flood at Noakhali, Bangladesh</h2>
-                <p class="text-gray-600 mb-4">Your donation will help provide essential supplies to those affected by the recent floods.</p>
+                <h2 class="text-xl font-bold mb-5 mt-5">Donate for Flood at Noakhali, Bangladesh</h2>
+                <p class="text-gray-600 mb-4">Your donation will help provide essential supplies to those affected by the recent floods. 
+                  Many families have lost their homes and are in desperate need of food, clean water, and medical assistance. 
+                  By contributing, you are playing a vital role in their recovery and helping them rebuild their lives. 
+                  Every little bit counts, and your generosity can make a significant difference in their journey towards stability.</p>
                 <input id="noakhaliInput" class="w-full border border-gray-300 rounded-md p-2 mb-4" placeholder="Write Donation Amount" type="text"/>
                 <button class="bg-[#B4F461] font-bold px-6 py-2 rounded-md w-full" onclick="donate('noakhali')">Donate Now</button>
             </div>
         </div>
 
         <!-- Card-2 -->
-        <div class="bg-white shadow-md rounded-md border border-gray-300 p-6 flex">
-            <img src="./assets/feni.png" alt="Flood Relief in Feni" class="w-1/2 rounded-md">
-            <div class="ml-6 flex-1">
-                <div class="flex items-center justify-items-center bg-gray-300 w-1/4 p-1 rounded-md">
+        <div class="bg-white shadow-md rounded-md border border-gray-300 p-6 flex flex-col md:flex-row">
+            <img src="./assets/feni.png" alt="Flood Relief in Feni" class="w-full md:w-1/2 rounded-md">
+            <div class="ml-0 md:ml-6 flex-1">
+                <div class="flex items-center justify-items-center text-center bg-gray-300 w-1/2 lg:w-1/4 p-1 mt-5 rounded-md">
                     <img src="./assets/coin.png" alt="">
-                    <span id="feniAmount" class="ml-2 text-gray-700 font-bold">600 BDT</span>
+                    <span id="feniAmount" class="ml-2  text-gray-700 font-bold">600 BDT</span>
                 </div>
-                <h2 class="text-xl font-bold mb-2">Donate for Flood Relief in Feni, Bangladesh</h2>
-                <p class="text-gray-600 mb-4">Your generous donation will help provide immediate aid to those affected by the floods.</p>
+                <h2 class="text-xl font-bold mb-5 mt-5">Donate for Flood Relief in Feni, Bangladesh</h2>
+                <p class="text-gray-600 mb-4"> Your generous donation will help provide immediate aid to those affected by the floods. 
+                  The situation is dire, with many individuals lacking access to basic necessities. 
+                  Your support will ensure that food, shelter, and medical care reach those who need it most. 
+                  Together, we can bring hope and relief to the communities struggling to recover from this disaster.</p>
                 <input id="feniInput" class="w-full border border-gray-300 rounded-md p-2 mb-4" placeholder="Write Donation Amount" type="text"/>
                 <button class="bg-[#B4F461] font-bold px-6 py-2 rounded-md w-full" onclick="donate('feni')">Donate Now</button>
             </div>
         </div>
 
         <!-- Card-3 -->
-        <div class="bg-white shadow-md rounded-md border border-gray-300 p-6 flex">
-            <img src="./assets/quota-protest.png" alt="Aid for Injured in Quota Movement" class="w-1/2 rounded-md">
-            <div class="ml-6 flex-1">
-                <div class="flex items-center justify-items-center bg-gray-300 w-1/4 p-1 rounded-md">
+        <div class="bg-white shadow-md rounded-md border border-gray-300 p-6 flex flex-col md:flex-row">
+            <img src="./assets/quota-protest.png" alt="Aid for Injured in Quota Movement" class="w-full md:w-1/2 rounded-md">
+            <div class="ml-0 md:ml-6 flex-1">
+                <div class="flex items-center justify-items-center text-center bg-gray-300 w-1/2 lg:w-1/4 p-1 mt-5 rounded-md">
                     <img src="./assets/coin.png" alt="">
-                    <span id="quotaAmount" class="ml-2 text-gray-700 font-bold">2400 BDT</span>
+                    <span id="quotaAmount" class="ml-2  text-gray-700 font-bold">2400 BDT</span>
                 </div>
-                <h2 class="text-xl font-bold mb-2">Aid for Injured in the Quota Movement</h2>
-                <p class="text-gray-600 mb-4">Your support is crucial in providing medical assistance to those injured in the recent protests.</p>
+                <h2 class="text-xl font-bold mb-5 mt-5">Aid for Injured in the Quota Movement</h2>
+                <p class="text-gray-600 mb-4">Your support is crucial in providing medical assistance to those injured in the recent protests. 
+                  Many individuals are in need of urgent medical care and rehabilitation services. 
+                  By donating, you are helping to ensure that they receive the treatment they deserve and the support they need to heal. 
+                  Your kindness can help restore dignity and hope to those who have suffered greatly.</p>
                 <input id="quotaInput" class="w-full border border-gray-300 rounded-md p-2 mb-4" placeholder="Write Donation Amount" type="text"/>
                 <button class="bg-[#B4F461] font-bold px-6 py-2 rounded-md w-full" onclick="donate('quota')">Donate Now</button>
             </div>
@@ -106,13 +115,12 @@
     </div>
 
     <div id="historySection" class="hidden mt-8">
-        <h2 class="text-2xl font-bold mb-4">Donation History</h2>
+        <h2 class="text-2xl font-bold mb-4 text-center">Donation History</h2>
         <div id="historyCards" class="space-y-4">
             <!-- History of Donation will be generated here -->
         </div>
     </div>
 </main>
-
 
 <!-- Modal  -->
 <div id="successModal" class="modal fixed inset-0 flex items-center justify-center z-50" style="display: none;"> 

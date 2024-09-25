@@ -123,7 +123,7 @@ function updateButtonStyles(active) {
         historyButton.classList.add('bg-white', 'text-gray-700');
         historyButton.classList.remove('bg-[#B4F461]', 'text-black');
     } else {
-        donationButton.classList.add('bg-white', 'text-gray-700');
+        donationButton.classList.add('bg-white','border','border-gray-300', 'text-gray-700');
         donationButton.classList.remove('bg-[#B4F461]', 'text-black');
         historyButton.classList.add('bg-[#B4F461]', 'text-black');
         historyButton.classList.remove('bg-white', 'text-gray-700');
